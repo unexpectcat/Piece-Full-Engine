@@ -13,10 +13,11 @@ project "kubykEngine"
    "Source/**.py"
     }
    includedirs { 
-    ".\\Inсlude\\assimp",
-    ".\\Inсlude\\GL",
-    ".\\Inсlude\\GLFW",
-    ".\\Inсlude\\ImGui"
+    "$(SolutionDir)Engine\\Include\\assimp",
+    "$(SolutionDir)Engine\\Include\\GL",
+    "$(SolutionDir)Engine\\Include\\GLFW",
+    "$(SolutionDir)Engine\\Include\\ImGui",
+    "$(SolutionDir)Engine\\Include"
    }
    libdirs { "$(SolutionDir)Engine/Libraries" }
    
