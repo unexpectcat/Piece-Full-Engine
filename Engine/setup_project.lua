@@ -17,6 +17,8 @@ project "kubykEngine"
     "$(SolutionDir)Engine\\Include\\GL",
     "$(SolutionDir)Engine\\Include\\GLFW",
     "$(SolutionDir)Engine\\Include\\ImGui",
+    "$(SolutionDir)Engine\\Include\\KHR",
+    "$(SolutionDir)Engine\\Include\\Glad",
     "$(SolutionDir)Engine\\Include"
    }
    libdirs { "$(SolutionDir)Engine/Libraries" }
