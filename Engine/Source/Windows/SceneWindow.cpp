@@ -1,3 +1,5 @@
+#include "SceneWindow.h"
+
 #define GLAD_GL_IMPLEMENTATION
 #include <glad/glad.h>
 #define GLFW_INCLUDE_NONE
@@ -21,7 +23,7 @@ static const Vertex vertices[3] =
     { {-0.7f, 0.9f}, {0.0f, 0.0f, 1.0f} }
 };
 
-int main(void)
+int SceneWindow(void)
 {
     GLFWwindow* window;
 
