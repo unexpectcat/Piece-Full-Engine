@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WINDOWS;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Include\assimp;$(SolutionDir)Engine\Include\GL;$(SolutionDir)Engine\Include\GLFW;$(SolutionDir)Engine\Include\ImGui;$(SolutionDir)Engine\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Include\assimp;$(SolutionDir)Engine\Include\GL;$(SolutionDir)Engine\Include\GLFW;$(SolutionDir)Engine\Include\ImGui;$(SolutionDir)Engine\Include\KHR;$(SolutionDir)Engine\Include\Glad;$(SolutionDir)Engine\Include\linmath;$(SolutionDir)Engine\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -99,7 +99,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WINDOWS;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Include\assimp;$(SolutionDir)Engine\Include\GL;$(SolutionDir)Engine\Include\GLFW;$(SolutionDir)Engine\Include\ImGui;$(SolutionDir)Engine\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Include\assimp;$(SolutionDir)Engine\Include\GL;$(SolutionDir)Engine\Include\GLFW;$(SolutionDir)Engine\Include\ImGui;$(SolutionDir)Engine\Include\KHR;$(SolutionDir)Engine\Include\Glad;$(SolutionDir)Engine\Include\linmath;$(SolutionDir)Engine\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -125,7 +125,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WINDOWS;DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Include\assimp;$(SolutionDir)Engine\Include\GL;$(SolutionDir)Engine\Include\GLFW;$(SolutionDir)Engine\Include\ImGui;$(SolutionDir)Engine\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Include\assimp;$(SolutionDir)Engine\Include\GL;$(SolutionDir)Engine\Include\GLFW;$(SolutionDir)Engine\Include\ImGui;$(SolutionDir)Engine\Include\KHR;$(SolutionDir)Engine\Include\Glad;$(SolutionDir)Engine\Include\linmath;$(SolutionDir)Engine\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\glad.c" />
     <ClCompile Include="Source\kybuk.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

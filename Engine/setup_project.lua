@@ -19,11 +19,10 @@ project "kubykEngine"
     "$(SolutionDir)Engine\\Include\\ImGui",
     "$(SolutionDir)Engine\\Include\\KHR",
     "$(SolutionDir)Engine\\Include\\Glad",
+    "$(SolutionDir)Engine\\Include\\linmath",
     "$(SolutionDir)Engine\\Include"
    }
    libdirs { "$(SolutionDir)Engine/Libraries" }
-   
-
    
       
    defines
