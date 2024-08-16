@@ -10,11 +10,18 @@ project "kubykEngine"
    "Source/**.c",
    "Source/**.fs",
    "Source/**.vs",
-   "Source/**.py"
+   "Source/**.py",
+        -- Add ImGui source files here
+        "$(SolutionDir)Engine/Include/ImGui/imgui.cpp",
+        "$(SolutionDir)Engine/Include/ImGui/imgui_draw.cpp",
+        "$(SolutionDir)Engine/Include/ImGui/imgui_tables.cpp",
+        "$(SolutionDir)Engine/Include/ImGui/imgui_widgets.cpp",
+        "$(SolutionDir)Engine/Include/ImGui/imgui_impl_glfw.cpp",
+        "$(SolutionDir)Engine/Include/ImGui/imgui_impl_opengl3.cpp"
     }
    includedirs { 
     "$(SolutionDir)Engine\\Include\\assimp",
-    "$(SolutionDir)Engine\\Include\\GL",
+    "$(SolutionDir)Engine\\Include\\GLM",
     "$(SolutionDir)Engine\\Include\\GLFW",
     "$(SolutionDir)Engine\\Include\\ImGui",
     "$(SolutionDir)Engine\\Include\\KHR",
