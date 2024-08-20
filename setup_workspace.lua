@@ -11,4 +11,5 @@ workspace "sausage_project"
 OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
 
 
-include "Engine/setup__engine_project.lua"
+include "Engine/setup_engine_project.lua"
+include "Game/setup_game_project.lua"
