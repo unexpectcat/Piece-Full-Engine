@@ -398,6 +398,6 @@ FodyWeavers.xsd
 *.sln.iml
 
 # Dependecies
-Engine/Include/*
-Engine/Libraries/*
-Engine/Binaries/*
+Include/*
+Libraries/*
+Binaries/*
