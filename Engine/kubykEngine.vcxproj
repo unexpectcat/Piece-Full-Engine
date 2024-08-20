@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WINDOWS;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Include\assimp;$(SolutionDir)Engine\Include\GL;$(SolutionDir)Engine\Include\GLFW;$(SolutionDir)Engine\Include\ImGui;$(SolutionDir)Engine\Include\KHR;$(SolutionDir)Engine\Include\Glad;$(SolutionDir)Engine\Include\linmath;$(SolutionDir)Engine\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Include\assimp;$(SolutionDir)Engine\Include\GLM;$(SolutionDir)Engine\Include\GLFW;$(SolutionDir)Engine\Include\ImGui;$(SolutionDir)Engine\Include\KHR;$(SolutionDir)Engine\Include\Glad;$(SolutionDir)Engine\Include\linmath;$(SolutionDir)Engine\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -99,7 +99,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WINDOWS;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Include\assimp;$(SolutionDir)Engine\Include\GL;$(SolutionDir)Engine\Include\GLFW;$(SolutionDir)Engine\Include\ImGui;$(SolutionDir)Engine\Include\KHR;$(SolutionDir)Engine\Include\Glad;$(SolutionDir)Engine\Include\linmath;$(SolutionDir)Engine\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Include\assimp;$(SolutionDir)Engine\Include\GLM;$(SolutionDir)Engine\Include\GLFW;$(SolutionDir)Engine\Include\ImGui;$(SolutionDir)Engine\Include\KHR;$(SolutionDir)Engine\Include\Glad;$(SolutionDir)Engine\Include\linmath;$(SolutionDir)Engine\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -125,7 +125,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WINDOWS;DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Include\assimp;$(SolutionDir)Engine\Include\GL;$(SolutionDir)Engine\Include\GLFW;$(SolutionDir)Engine\Include\ImGui;$(SolutionDir)Engine\Include\KHR;$(SolutionDir)Engine\Include\Glad;$(SolutionDir)Engine\Include\linmath;$(SolutionDir)Engine\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Include\assimp;$(SolutionDir)Engine\Include\GLM;$(SolutionDir)Engine\Include\GLFW;$(SolutionDir)Engine\Include\ImGui;$(SolutionDir)Engine\Include\KHR;$(SolutionDir)Engine\Include\Glad;$(SolutionDir)Engine\Include\linmath;$(SolutionDir)Engine\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -147,10 +147,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Windows\SceneWindow.h" />
+    <ClInclude Include="Source\Windows\testWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(SolutionDir)Engine\Include\ImGui\imgui.cpp" />
+    <ClCompile Include="$(SolutionDir)Engine\Include\ImGui\imgui_draw.cpp" />
+    <ClCompile Include="$(SolutionDir)Engine\Include\ImGui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="$(SolutionDir)Engine\Include\ImGui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="$(SolutionDir)Engine\Include\ImGui\imgui_tables.cpp" />
+    <ClCompile Include="$(SolutionDir)Engine\Include\ImGui\imgui_widgets.cpp" />
+    <ClCompile Include="Source\Windows\SceneWindow.cpp" />
     <ClCompile Include="Source\glad.c" />
     <ClCompile Include="Source\main.cpp" />
-    <ClCompile Include="Source\Windows\SceneWindow.cpp" />
-    <ClCompile Include="Source\Windows\SceneWindow.h" />
+    <ClCompile Include="Source\Windows\testWindow.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

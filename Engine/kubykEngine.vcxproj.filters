@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="$(SolutionDir)Engine">
+      <UniqueIdentifier>{CCBEC99B-B84D-5365-616C-67604DDA630B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="$(SolutionDir)Engine\Include">
+      <UniqueIdentifier>{1F5A17DF-0B15-078B-B4CC-7FD5A066511B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="$(SolutionDir)Engine\Include\ImGui">
+      <UniqueIdentifier>{89AA0853-75E6-0BBD-DEF8-23B4CA53B4D7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{56EB95D1-428D-C0A7-2B48-D4FB178947F8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Windows">
+      <UniqueIdentifier>{908B2C7A-7C59-2080-65ED-90A6515AFCE4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Windows\SceneWindow.h">
+      <Filter>Source\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Windows\testWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(SolutionDir)Engine\Include\ImGui\imgui.cpp">
+      <Filter>$(SolutionDir)Engine\Include\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)Engine\Include\ImGui\imgui_draw.cpp">
+      <Filter>$(SolutionDir)Engine\Include\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)Engine\Include\ImGui\imgui_impl_glfw.cpp">
+      <Filter>$(SolutionDir)Engine\Include\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)Engine\Include\ImGui\imgui_impl_opengl3.cpp">
+      <Filter>$(SolutionDir)Engine\Include\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)Engine\Include\ImGui\imgui_tables.cpp">
+      <Filter>$(SolutionDir)Engine\Include\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)Engine\Include\ImGui\imgui_widgets.cpp">
+      <Filter>$(SolutionDir)Engine\Include\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Windows\SceneWindow.cpp">
+      <Filter>Source\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\glad.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Windows\testWindow.cpp" />
+  </ItemGroup>
+</Project>
