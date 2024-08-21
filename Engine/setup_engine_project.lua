@@ -58,6 +58,7 @@ project "sausageEngine"
        defines { "DEBUG" }
        runtime "Debug"
        symbols "On"
+       linkoptions { "/NODEFAULTLIB:MSVCRT.lib" }
        debugenvs { "PATH=%PATH%;$(SolutionDir)\\Binaries\\Debug" }
 
    filter "configurations:Release"
@@ -65,6 +66,7 @@ project "sausageEngine"
        runtime "Release"
        optimize "On"
        symbols "On"
+       linkoptions { "/NODEFAULTLIB:MSVCRT.lib" }
        debugenvs { "PATH=%PATH%;$(SolutionDir)\\Binaries\\Release" }
 
    filter "configurations:Dist"
@@ -72,4 +74,5 @@ project "sausageEngine"
        runtime "Release"
        optimize "On"
        symbols "Off"
+       linkoptions { "/NODEFAULTLIB:MSVCRT.lib" }
        debugenvs { "PATH=%PATH%;$(SolutionDir)\\Binaries\\Dist" }
