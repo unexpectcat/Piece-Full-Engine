@@ -20,8 +20,9 @@ project "myGame"
         "$(SolutionDir)Include/ImGui/imgui_impl_opengl3.cpp",
 
         -- Add Sausage Engine Files
-        -- "$(SolutionDir)Engine/Source/**.h",
-        -- "$(SolutionDir)Engine/Source/**.cpp",
+        "$(SolutionDir)Engine/Source/glad.c",
+        "$(SolutionDir)Engine/Source/Windows/testWindow.h",
+        "$(SolutionDir)Engine/Source/Windows/testWindow.cpp",
         -- "$(SolutionDir)Engine/Source/**.c",
         -- "$(SolutionDir)Engine/Source/**.fs",
         -- "$(SolutionDir)Engine/Source/**.vs",

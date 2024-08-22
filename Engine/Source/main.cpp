@@ -7,6 +7,8 @@
 #include <iostream>
 int main()
 {
+    Scene* myNewScene = new Scene();
+
     // Initialize GLFW
     if (!glfwInit())
         return -1;
@@ -33,10 +35,10 @@ int main()
     }
 
     // Set OpenGL viewport
-    glViewport(0, 0, 1280, 720);
+    glViewport(0, 0, 1360, 768);
 
     // Initialize the framebuffer for offscreen rendering
-    InitFramebuffer(1280, 720);
+    myNewScene->InitFramebuffer(512, 512);
 
     // Setup ImGui context
     IMGUI_CHECKVERSION();
@@ -47,6 +49,7 @@ int main()
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init("#version 330");
 
+    bool show_demo_window = true;
     // Main loop
     while (!glfwWindowShouldClose(window))
     {
@@ -56,16 +59,20 @@ int main()
         ImGui::NewFrame();
 
         // Render to the framebuffer
-        RenderToFramebuffer();
+        myNewScene->RenderToFramebuffer();
+
+        glClearColor(0.1f, 0.4f, 0.1f, 1.0f); // Set a background color
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // Create an ImGui window and display the rendered content
         ImGui::Begin("OpenGL Window");
 
         // Display the framebuffer texture in ImGui
-        ImGui::Image((void*)(intptr_t)GetRenderedTexture(), ImVec2(512, 512));
+        ImGui::Image((void*)(intptr_t)myNewScene->GetRenderedTexture(), ImVec2(512, 512));
 
         ImGui::End();
 
+        //ImGui::ShowDemoWindow(&show_demo_window);
         // Render ImGui
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
@@ -80,6 +87,7 @@ int main()
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
 
+    
     glfwDestroyWindow(window);
     glfwTerminate();
 

@@ -1,11 +1,12 @@
 #include <glad/glad.h>
 #include <iostream>
+#include "testWindow.h"
 
 // Framebuffer object, texture, and renderbuffer
-GLuint framebuffer, textureColorbuffer, rbo;
+
 
 // Function to initialize the framebuffer
-void InitFramebuffer(int width, int height)
+void Scene::InitFramebuffer(int width, int height)
 {
     // Generate framebuffer
     glGenFramebuffers(1, &framebuffer);
@@ -36,25 +37,31 @@ void InitFramebuffer(int width, int height)
 }
 
 // Function to render to the framebuffer
-void RenderToFramebuffer()
+void Scene::RenderToFramebuffer()
 {
     // Bind the framebuffer
     glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
     glEnable(GL_DEPTH_TEST);
 
-    // Clear the framebuffer
-    glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    // Render your scene here
-    // ... your OpenGL drawing code ...
+    Render();
 
     // Unbind the framebuffer
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
+//Render of this scene
+void Scene::Render()
+{
+    // Clear the framebuffer
+    glClearColor(ss_R, ss_G, ss_B, ss_A);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    // Render your scene here
+    // ... your OpenGL drawing code ...
+}
+
 // Function to get the texture ID for ImGui::Image
-GLuint GetRenderedTexture()
+GLuint Scene::GetRenderedTexture()
 {
     return textureColorbuffer;
 }
