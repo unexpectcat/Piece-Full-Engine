@@ -3,8 +3,9 @@
 #include <imgui.h>
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
-#include "Windows/testWindow.h"  // Include your rendering logic
+#include "Tabs/testWindow.h"  // Include your rendering logic
 #include <iostream>
+
 int main()
 {
     Scene* myNewScene = new Scene();
@@ -61,7 +62,7 @@ int main()
         // Render to the framebuffer
         myNewScene->RenderToFramebuffer();
 
-        glClearColor(0.1f, 0.4f, 0.1f, 1.0f); // Set a background color
+        glClearColor(0.3f, 0.3f, 0.4f, 1.0f); // Set a background color
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // Create an ImGui window and display the rendered content

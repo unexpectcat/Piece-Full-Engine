@@ -3,7 +3,7 @@
 
 
 #include <iostream>
-#include "../Engine/Source/Windows/testWindow.h" 
+#include "../Engine/Source/Tabs/testWindow.h" 
 
 
 
@@ -38,8 +38,7 @@ int main(void)
         return -1;
     }
 
-    //glClear(GL_COLOR_BUFFER_BIT);
-    //glClearColor(0.9f, 0.8f, 0.0f, 1.0f);
+    myGameScene->InitVertexBuffer();
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
