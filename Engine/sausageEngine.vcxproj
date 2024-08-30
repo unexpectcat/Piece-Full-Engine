@@ -150,8 +150,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Windows\SceneWindow.h" />
-    <ClInclude Include="Source\Windows\testWindow.h" />
+    <ClInclude Include="Source\Objects\triangle.h" />
+    <ClInclude Include="Source\Tabs\SceneWindow.h" />
+    <ClInclude Include="Source\Tabs\testWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(SolutionDir)Include\ImGui\imgui.cpp" />
@@ -160,8 +161,9 @@
     <ClCompile Include="$(SolutionDir)Include\ImGui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="$(SolutionDir)Include\ImGui\imgui_tables.cpp" />
     <ClCompile Include="$(SolutionDir)Include\ImGui\imgui_widgets.cpp" />
-    <ClCompile Include="Source\Windows\SceneWindow.cpp" />
-    <ClCompile Include="Source\Windows\testWindow.cpp" />
+    <ClCompile Include="Source\Objects\triangle.cpp" />
+    <ClCompile Include="Source\Tabs\SceneWindow.cpp" />
+    <ClCompile Include="Source\Tabs\testWindow.cpp" />
     <ClCompile Include="Source\glad.c" />
     <ClCompile Include="Source\main.cpp" />
   </ItemGroup>

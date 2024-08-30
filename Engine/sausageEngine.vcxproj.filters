@@ -10,16 +10,22 @@
     <Filter Include="Source">
       <UniqueIdentifier>{56EB95D1-428D-C0A7-2B48-D4FB178947F8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Windows">
-      <UniqueIdentifier>{908B2C7A-7C59-2080-65ED-90A6515AFCE4}</UniqueIdentifier>
+    <Filter Include="Source\Objects">
+      <UniqueIdentifier>{0F80BE01-FB4D-B207-E4E1-222ED04E8E6C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Tabs">
+      <UniqueIdentifier>{4FAA1E0F-BB5F-9704-4454-91DBB0088E08}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Windows\SceneWindow.h">
-      <Filter>Source\Windows</Filter>
+    <ClInclude Include="Source\Objects\triangle.h">
+      <Filter>Source\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Windows\testWindow.h">
-      <Filter>Source\Windows</Filter>
+    <ClInclude Include="Source\Tabs\SceneWindow.h">
+      <Filter>Source\Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tabs\testWindow.h">
+      <Filter>Source\Tabs</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -41,11 +47,14 @@
     <ClCompile Include="$(SolutionDir)Include\ImGui\imgui_widgets.cpp">
       <Filter>$(SolutionDir)Include\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Windows\SceneWindow.cpp">
-      <Filter>Source\Windows</Filter>
+    <ClCompile Include="Source\Objects\triangle.cpp">
+      <Filter>Source\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Windows\testWindow.cpp">
-      <Filter>Source\Windows</Filter>
+    <ClCompile Include="Source\Tabs\SceneWindow.cpp">
+      <Filter>Source\Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Tabs\testWindow.cpp">
+      <Filter>Source\Tabs</Filter>
     </ClCompile>
     <ClCompile Include="Source\glad.c">
       <Filter>Source</Filter>

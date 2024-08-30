@@ -1,9 +1,14 @@
 #include <glad/glad.h>
 #include <iostream>
 #include "testWindow.h"
-
+#include "../Objects/triangle.h"
 // Framebuffer object, texture, and renderbuffer
 
+
+void Scene::InitVertexBuffer()
+{
+    sausage::genreate_trinagle_buffer();
+}
 
 // Function to initialize the framebuffer
 void Scene::InitFramebuffer(int width, int height)
@@ -56,6 +61,7 @@ void Scene::Render()
     glClearColor(ss_R, ss_G, ss_B, ss_A);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+    sausage::draw_triangle();
     // Render your scene here
     // ... your OpenGL drawing code ...
 }
