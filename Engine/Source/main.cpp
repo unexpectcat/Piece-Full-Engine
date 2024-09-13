@@ -6,6 +6,8 @@
 #include "Tabs/SceneWindow.h"  // Include your rendering logic
 #include <iostream>
 
+
+
 int main()
 {
     Scene* myNewScene = new Scene();
@@ -73,7 +75,8 @@ int main()
 
         ImGui::End();
 
-        //ImGui::ShowDemoWindow(&show_demo_window);
+        ImGui::ShowDemoWindow(&show_demo_window);
+        
         // Render ImGui
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
