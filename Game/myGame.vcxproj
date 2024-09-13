@@ -151,11 +151,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="$(SolutionDir)Engine\Source\Objects\trinagle.h" />
-    <ClInclude Include="$(SolutionDir)Engine\Source\Tabs\testWindow.h" />
+    <ClInclude Include="$(SolutionDir)Engine\Source\Tabs\SceneWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(SolutionDir)Engine\Source\Objects\triangle.cpp" />
-    <ClCompile Include="$(SolutionDir)Engine\Source\Tabs\testWindow.cpp" />
+    <ClCompile Include="$(SolutionDir)Engine\Source\Tabs\SceneWindow.cpp" />
     <ClCompile Include="$(SolutionDir)Engine\Source\glad.c" />
     <ClCompile Include="$(SolutionDir)Include\ImGui\imgui.cpp" />
     <ClCompile Include="$(SolutionDir)Include\ImGui\imgui_draw.cpp" />

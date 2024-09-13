@@ -21,8 +21,8 @@ project "myGame"
 
         -- Add Sausage Engine Files
         "$(SolutionDir)Engine/Source/glad.c",
-        "$(SolutionDir)Engine/Source/Tabs/testWindow.h",
-        "$(SolutionDir)Engine/Source/Tabs/testWindow.cpp",
+        "$(SolutionDir)Engine/Source/Tabs/SceneWindow.h",
+        "$(SolutionDir)Engine/Source/Tabs/SceneWindow.cpp",
         "$(SolutionDir)Engine/Source/Objects/trinagle.h",
         "$(SolutionDir)Engine/Source/Objects/triangle.cpp"
 

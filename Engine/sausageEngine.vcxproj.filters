@@ -16,9 +16,6 @@
     <Filter Include="Source\Tabs">
       <UniqueIdentifier>{4FAA1E0F-BB5F-9704-4454-91DBB0088E08}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Shaders">
-      <UniqueIdentifier>{4973a353-cf5f-43ad-8174-5ae7a063cab9}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Objects\triangle.h">
@@ -27,12 +24,12 @@
     <ClInclude Include="Source\Tabs\SceneWindow.h">
       <Filter>Source\Tabs</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Tabs\testWindow.h">
-      <Filter>Source\Tabs</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(SolutionDir)Include\ImGui\imgui.cpp">
+      <Filter>$(SolutionDir)Include\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="$(SolutionDir)Include\ImGui\imgui_demo.cpp">
       <Filter>$(SolutionDir)Include\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="$(SolutionDir)Include\ImGui\imgui_draw.cpp">
@@ -56,19 +53,11 @@
     <ClCompile Include="Source\Tabs\SceneWindow.cpp">
       <Filter>Source\Tabs</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Tabs\testWindow.cpp">
-      <Filter>Source\Tabs</Filter>
-    </ClCompile>
     <ClCompile Include="Source\glad.c">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Source\main.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="todo.txt">
-      <Filter>Source\Shaders</Filter>
-    </Text>
   </ItemGroup>
 </Project>

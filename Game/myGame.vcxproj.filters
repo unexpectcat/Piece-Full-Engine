@@ -27,7 +27,7 @@
     <ClInclude Include="$(SolutionDir)Engine\Source\Objects\trinagle.h">
       <Filter>$(SolutionDir)Engine\Source\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="$(SolutionDir)Engine\Source\Tabs\testWindow.h">
+    <ClInclude Include="$(SolutionDir)Engine\Source\Tabs\SceneWindow.h">
       <Filter>$(SolutionDir)Engine\Source\Tabs</Filter>
     </ClInclude>
   </ItemGroup>
@@ -35,7 +35,7 @@
     <ClCompile Include="$(SolutionDir)Engine\Source\Objects\triangle.cpp">
       <Filter>$(SolutionDir)Engine\Source\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="$(SolutionDir)Engine\Source\Tabs\testWindow.cpp">
+    <ClCompile Include="$(SolutionDir)Engine\Source\Tabs\SceneWindow.cpp">
       <Filter>$(SolutionDir)Engine\Source\Tabs</Filter>
     </ClCompile>
     <ClCompile Include="$(SolutionDir)Engine\Source\glad.c">

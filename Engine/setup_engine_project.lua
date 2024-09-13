@@ -17,7 +17,8 @@ project "sausageEngine"
         "$(SolutionDir)Include/ImGui/imgui_tables.cpp",
         "$(SolutionDir)Include/ImGui/imgui_widgets.cpp",
         "$(SolutionDir)Include/ImGui/imgui_impl_glfw.cpp",
-        "$(SolutionDir)Include/ImGui/imgui_impl_opengl3.cpp"
+        "$(SolutionDir)Include/ImGui/imgui_impl_opengl3.cpp",
+        "$(SolutionDir)Include/ImGui/imgui_demo.cpp"
     }
    includedirs { 
     "$(SolutionDir)Include\\assimp",

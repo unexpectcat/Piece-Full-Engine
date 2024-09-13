@@ -3,7 +3,7 @@
 #include <imgui.h>
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
-#include "Tabs/testWindow.h"  // Include your rendering logic
+#include "Tabs/SceneWindow.h"  // Include your rendering logic
 #include <iostream>
 
 int main()
