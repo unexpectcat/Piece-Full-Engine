@@ -147,9 +147,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\engine\scene\Scene.h" />
+    <ClInclude Include="src\engine\renderer\InternalRenderer.h" />
+    <ClInclude Include="src\engine\renderer\Renderer.h" />
+    <ClInclude Include="src\engine\core\InternalCore.h" />
+    <ClInclude Include="src\engine\core\Core.h" />
     <ClInclude Include="src\RenderDump.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\engine\scene\Scene.cpp" />
+    <ClCompile Include="src\engine\renderer\InternalRenderer.cpp" />
+    <ClCompile Include="src\engine\renderer\Renderer.cpp" />
+    <ClCompile Include="src\engine\core\InternalCore.cpp" />
+    <ClCompile Include="src\engine\core\Core.cpp" />
     <ClCompile Include="src\RenderDump.cpp" />
     <ClCompile Include="src\glad.c" />
     <ClCompile Include="src\main.cpp" />
