@@ -15,10 +15,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4580D70E-3122-02E5-1ADD-1539061E8935}</ProjectGuid>
+    <ProjectGuid>{6DDD2010-D9F1-48C1-A273-EC200E4745F2}</ProjectGuid>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>myGame</RootNamespace>
+    <RootNamespace>part1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -55,23 +55,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)Game\Build\windows-x86_64\Debug\myGame\</OutDir>
-    <IntDir>$(SolutionDir)Game\Build\Intermediates\windows-x86_64\Debug\myGame\</IntDir>
-    <TargetName>myGame</TargetName>
+    <OutDir>$(SolutionDir)bin\windows-x86_64\Debug\part1\</OutDir>
+    <IntDir>$(SolutionDir)bin\windows-x86_64\Debug\part1\</IntDir>
+    <TargetName>part1</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Game\Build\windows-x86_64\Release\myGame\</OutDir>
-    <IntDir>$(SolutionDir)Game\Build\Intermediates\windows-x86_64\Release\myGame\</IntDir>
-    <TargetName>myGame</TargetName>
+    <OutDir>$(SolutionDir)bin\windows-x86_64\Release\part1\</OutDir>
+    <IntDir>$(SolutionDir)bin\windows-x86_64\Release\part1\</IntDir>
+    <TargetName>part1</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Game\Build\windows-x86_64\Dist\myGame\</OutDir>
-    <IntDir>$(SolutionDir)Game\Build\Intermediates\windows-x86_64\Dist\myGame\</IntDir>
-    <TargetName>myGame</TargetName>
+    <OutDir>$(SolutionDir)bin\windows-x86_64\Dist\part1\</OutDir>
+    <IntDir>$(SolutionDir)bin\windows-x86_64\Dist\part1\</IntDir>
+    <TargetName>part1</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WINDOWS;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Include\assimp;$(SolutionDir)Include\GLM;$(SolutionDir)Include\GLFW;$(SolutionDir)Include\ImGui;$(SolutionDir)Include\KHR;$(SolutionDir)Include\Glad;$(SolutionDir)Include\linmath;$(SolutionDir)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)include\assimp;$(SolutionDir)include\glad;$(SolutionDir)include\GLFW;$(SolutionDir)include\ImGui;$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -90,9 +90,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;user32.lib;gdi32.lib;shell32.lib;assimp-vc143-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)Libraries;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalOptions>/NODEFAULTLIB:MSVCRT.lib %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;user32.lib;gdi32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -100,7 +99,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WINDOWS;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Include\assimp;$(SolutionDir)Include\GLM;$(SolutionDir)Include\GLFW;$(SolutionDir)Include\ImGui;$(SolutionDir)Include\KHR;$(SolutionDir)Include\Glad;$(SolutionDir)Include\linmath;$(SolutionDir)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)include\assimp;$(SolutionDir)include\glad;$(SolutionDir)include\GLFW;$(SolutionDir)include\ImGui;$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -117,9 +116,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;user32.lib;gdi32.lib;shell32.lib;assimp-vc143-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)Libraries;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalOptions>/NODEFAULTLIB:MSVCRT.lib %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;user32.lib;gdi32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -127,7 +125,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WINDOWS;DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Include\assimp;$(SolutionDir)Include\GLM;$(SolutionDir)Include\GLFW;$(SolutionDir)Include\ImGui;$(SolutionDir)Include\KHR;$(SolutionDir)Include\Glad;$(SolutionDir)Include\linmath;$(SolutionDir)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)include\assimp;$(SolutionDir)include\glad;$(SolutionDir)include\GLFW;$(SolutionDir)include\ImGui;$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -144,26 +142,17 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;user32.lib;gdi32.lib;shell32.lib;assimp-vc143-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)Libraries;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalOptions>/NODEFAULTLIB:MSVCRT.lib %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;user32.lib;gdi32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="$(SolutionDir)Engine\Source\Objects\trinagle.h" />
-    <ClInclude Include="$(SolutionDir)Engine\Source\Tabs\SceneWindow.h" />
+    <ClInclude Include="src\RenderDump.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(SolutionDir)Engine\Source\Objects\triangle.cpp" />
-    <ClCompile Include="$(SolutionDir)Engine\Source\Tabs\SceneWindow.cpp" />
-    <ClCompile Include="$(SolutionDir)Engine\Source\glad.c" />
-    <ClCompile Include="$(SolutionDir)Include\ImGui\imgui.cpp" />
-    <ClCompile Include="$(SolutionDir)Include\ImGui\imgui_draw.cpp" />
-    <ClCompile Include="$(SolutionDir)Include\ImGui\imgui_impl_glfw.cpp" />
-    <ClCompile Include="$(SolutionDir)Include\ImGui\imgui_impl_opengl3.cpp" />
-    <ClCompile Include="$(SolutionDir)Include\ImGui\imgui_tables.cpp" />
-    <ClCompile Include="$(SolutionDir)Include\ImGui\imgui_widgets.cpp" />
-    <ClCompile Include="Source\gameMain.cpp" />
+    <ClCompile Include="src\RenderDump.cpp" />
+    <ClCompile Include="src\glad.c" />
+    <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
