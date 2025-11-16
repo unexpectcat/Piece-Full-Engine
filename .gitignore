@@ -364,6 +364,12 @@ ASALocalRun/
 # Visual Studio History (VSHistory) files
 .vshistory/
 
+# Ignore Visual Studio C++ project files (since I use premake)
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+
 # BeatPulse healthcheck temp database
 healthchecksdb
 
