@@ -2,7 +2,7 @@
 workspace "sausage"
 architecture "x64"
 configurations { "Debug", "Release", "Dist" }
-startproject "kubykEngine"
+startproject "sausageEngine"
 
 -- Workspace-wide build options for MSVC
 filter "system:windows"
@@ -10,7 +10,7 @@ buildoptions { "/EHsc", "/Zc:preprocessor", "/Zc:__cplusplus" }
 
 OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
 
-project "part1"
+project "sausageEngine"
 kind "ConsoleApp"
 language "C++"
 cppdialect "C++20"
@@ -29,7 +29,9 @@ includedirs {
     "$(SolutionDir)include\\glad",
     "$(SolutionDir)include\\GLFW",
     "$(SolutionDir)include\\ImGui",
-    "$(SolutionDir)include"
+    "$(SolutionDir)include",
+
+    "$(SolutionDir)\\src\\engine"
 }
 libdirs { "$(SolutionDir)bin" }
 
