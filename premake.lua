@@ -22,7 +22,9 @@ files { "src/**.h",
     "src/**.c",
     "src/**.fs",
     "src/**.vs",
-    "src/**.py"
+    "src/**.py",
+    "include/imgui/**.cpp",
+    "include/imgui/backends/**.cpp"
 }
 includedirs {
     "$(SolutionDir)include\\assimp",
@@ -30,6 +32,8 @@ includedirs {
     "$(SolutionDir)include\\GLFW",
     "$(SolutionDir)include\\ImGui",
     "$(SolutionDir)include",
+    "$(SolutionDir)include\\imgui",
+    "$(SolutionDir)include\\imgui\\backends",
 
     "$(SolutionDir)\\src\\engine"
 }
