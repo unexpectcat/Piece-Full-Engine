@@ -30,6 +30,7 @@ includedirs {
     "$(SolutionDir)include\\assimp",
     "$(SolutionDir)include\\glad",
     "$(SolutionDir)include\\GLFW",
+    "$(SolutionDir)include\\GLM",
     "$(SolutionDir)include\\ImGui",
     "$(SolutionDir)include",
     "$(SolutionDir)include\\imgui",
