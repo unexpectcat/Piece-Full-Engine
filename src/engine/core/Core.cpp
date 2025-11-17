@@ -28,7 +28,7 @@ namespace Sausage {
             return;
         }
 
-        while (true)
+        while (impl->renderer.isEngineWindowOpen())
         {
             impl->renderer.DrawFrame();
         }

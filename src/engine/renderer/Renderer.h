@@ -15,6 +15,7 @@ namespace Sausage {
         void SetTarget(Window* window);
         void Clear();
         void DrawFrame();
+        bool isEngineWindowOpen();
     private:
         struct Impl;
         Impl* impl;

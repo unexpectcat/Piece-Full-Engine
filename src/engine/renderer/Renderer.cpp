@@ -12,7 +12,7 @@ namespace Sausage {
         unsigned int vertexShader;
         unsigned int fragmentShader;
         unsigned int shaderProgram;
-        GLFWwindow* window;
+        GLFWwindow* sausage_window;
         const char* vertexShaderSource = R"(
             #version 330 core
             layout (location = 0) in vec3 aPos;
@@ -40,6 +40,10 @@ namespace Sausage {
         delete impl;
     }
     
+    bool Renderer::isEngineWindowOpen()
+    {
+        return !glfwWindowShouldClose(impl->sausage_window);
+    }
     void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     {
         glViewport(0, 0, width, height);
@@ -59,15 +63,15 @@ namespace Sausage {
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-		impl->window = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
+		impl->sausage_window = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
 
-		if (impl->window == nullptr)
+		if (impl->sausage_window == nullptr)
 		{
 			std::cout << "Failed to create GLFW window\n";
 			glfwTerminate();
 			return - 1;
 		}
-        glfwMakeContextCurrent(impl->window);
+        glfwMakeContextCurrent(impl->sausage_window);
 
         // Load OpenGL function pointers
         if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -77,7 +81,7 @@ namespace Sausage {
         }
         glViewport(0, 0, 800, 600);
 
-        glfwSetFramebufferSizeCallback(impl->window, framebuffer_size_callback);
+        glfwSetFramebufferSizeCallback(impl->sausage_window, framebuffer_size_callback);
 
         // Disable vsync (manual frame control)
         glfwSwapInterval(0);
@@ -170,7 +174,7 @@ namespace Sausage {
         glBindVertexArray(impl->VAO);
 
         glfwPollEvents();
-        glfwSwapBuffers(impl->window);
+        glfwSwapBuffers(impl->sausage_window);
 
 	}
 }
