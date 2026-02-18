@@ -1,85 +1,56 @@
--- premake5.lua
-workspace "sausage"
-architecture "x64"
-configurations { "Debug", "Release", "Dist" }
-startproject "sausageEngine"
+workspace "SausageEngine"
+    architecture "x64"
+    configurations { "Debug", "Release", "Dist" }
+    startproject "SausageEngine"
 
--- Workspace-wide build options for MSVC
-filter "system:windows"
-buildoptions { "/EHsc", "/Zc:preprocessor", "/Zc:__cplusplus" }
-
-OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
+outputdir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
 
 project "sausageEngine"
-kind "ConsoleApp"
-language "C++"
-cppdialect "C++20"
-targetdir "bin/%{cfg.buildcfg}"
-staticruntime "off"
+    kind "ConsoleApp"
+    language "C++"
+    cppdialect "C++20"
+    staticruntime "off"
 
-files { "src/**.h",
-    "src/**.cpp",
-    "src/**.c",
-    "src/**.fs",
-    "src/**.vs",
-    "src/**.py",
-    "include/imgui/**.cpp",
-    "include/imgui/backends/**.cpp"
-}
-includedirs {
-    "$(SolutionDir)include\\assimp",
-    "$(SolutionDir)include\\glad",
-    "$(SolutionDir)include\\GLFW",
-    "$(SolutionDir)include\\GLM",
-    "$(SolutionDir)include\\ImGui",
-    "$(SolutionDir)include",
-    "$(SolutionDir)include\\imgui",
-    "$(SolutionDir)include\\imgui\\backends",
+    -- Unified paths using forward slashes
+    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("obj/" .. outputdir .. "/%{prj.name}")
 
-    "$(SolutionDir)\\src\\engine"
-}
-libdirs { "$(SolutionDir)bin" }
+    files { 
+        "src/**.h", "src/**.hpp",
+        "src/**.cpp", "src/**.c",
+        "src/**.fs", "src/**.vs",
+        "include/imgui/**.cpp",
+        "include/imgui/backends/**.cpp"
+    }
 
+    includedirs {
+        "src",
+        "include",
+        "include/imgui",
+        "include/imgui/backends",
+        "include/glad", -- Ensure Glad is found
+        "include/glfw",
+        "include/glm"
+    }
 
+    filter "system:windows"
+        systemversion "latest"
+        defines { "WINDOWS", "_CRT_SECURE_NO_WARNINGS" }
+        buildoptions { "/EHsc" }
+        -- Windows needs specific lib names
+        links { "glfw3", "opengl32", "user32", "gdi32", "shell32" }
+        -- Change this to your actual local lib folder for Windows
+        libdirs { "lib/windows" } 
 
+    filter "system:linux"
+        defines { "LINUX" }
+        -- Linux finds these in /usr/lib automatically
+        links { "glfw", "GL", "X11", "pthread", "dl", "m" }
 
-defines
-{
-    "_CRT_SECURE_NO_WARNINGS"
-}
+    filter "configurations:Debug"
+        defines "DEBUG"
+        symbols "On"
 
-
-targetdir("$(SolutionDir)bin/" .. OutputDir .. "/%{prj.name}")
-objdir("$(SolutionDir)bin/" .. OutputDir .. "/%{prj.name}")
-
-links {
-    "glfw3.lib",
-    "opengl32.lib",
-    "user32.lib",
-    "gdi32.lib",
-    "shell32.lib"
-}
-
-filter "system:windows"
-systemversion "latest"
-defines { "WINDOWS" }
-
-filter "configurations:Debug"
-defines { "DEBUG" }
-runtime "Debug"
-symbols "On"
-debugenvs { "PATH=%PATH%;$(SolutionDir)\\bin\\debug" }
-
-filter "configurations:Release"
-defines { "RELEASE" }
-runtime "Release"
-optimize "On"
-symbols "On"
-debugenvs { "PATH=%PATH%;$(SolutionDir)\\bin\\release" }
-
-filter "configurations:Dist"
-defines { "DIST" }
-runtime "Release"
-optimize "On"
-symbols "Off"
-debugenvs { "PATH=%PATH%;$(SolutionDir)\\bin\\dist" }
+    filter "configurations:Release"
+        defines "RELEASE"
+        optimize "On"

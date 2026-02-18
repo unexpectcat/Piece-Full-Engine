@@ -1,0 +1,1 @@
+sudo pacman -S --needed --noconfirm glfw-x11 mingw-w64-gcc mesa mesa-utils base-devel glad premake
