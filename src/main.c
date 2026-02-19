@@ -11,14 +11,24 @@ int main(void) {
     }
 
     // 2. Set OpenGL version (3.3 Core is the standard for learning)
+    // Try 3.3 first
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    // 3. Create the window
-    GLFWwindow* window = glfwCreateWindow(800, 600, "Sausage Engine - Arch Linux", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(800, 600, "Sausage Engine", NULL, NULL);
+
     if (!window) {
-        fprintf(stderr, "Failed to create GLFW window\n");
+        printf("3.3 Core failed. Attempting fallback to 2.1...\n");
+        // Fallback for VMs
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+        glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_ANY_PROFILE);
+        window = glfwCreateWindow(800, 600, "Sausage Engine (Fallback)", NULL, NULL);
+    }
+
+    if (!window) {
+        fprintf(stderr, "Fatal: GPU does not support OpenGL 2.1 or 3.3\n");
         glfwTerminate();
         return -1;
     }

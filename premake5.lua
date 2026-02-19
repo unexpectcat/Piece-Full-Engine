@@ -37,7 +37,7 @@ project "SausageEngine"
     filter "system:windows"
         systemversion "latest"
         defines { "WINDOWS", "_CRT_SECURE_NO_WARNINGS" }
-        buildoptions { "/EHsc" }
+        systemversion "latest"
         -- Windows needs specific lib names
         links { "glfw3", "opengl32", "user32", "gdi32", "shell32", "assimp"}
         -- Change this to your actual local lib folder for Windows
