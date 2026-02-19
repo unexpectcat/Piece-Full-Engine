@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2edc0c53-2b9d-4c42-9f42-d8177d1e3cc4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.gitmodules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../scripts/export-compile-commands" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../createProject.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../createProject.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../premake.lua" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="39rgyQSZO4fqWqA9pATIi6YIkhI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "iss-1",
+    "last_opened_file_path": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.first.attach.projects": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2edc0c53-2b9d-4c42-9f42-d8177d1e3cc4" name="Changes" comment="" />
+      <created>1771459857926</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1771459857926</updated>
+      <workItem from="1771459858994" duration="27000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
