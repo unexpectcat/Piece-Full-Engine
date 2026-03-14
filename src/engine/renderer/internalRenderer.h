@@ -6,8 +6,12 @@
 #define SAUSAGEENGINE_V0_0_2_INTERNALRENDERER_H
 
 
-class internalRenderer {
+namespace internalRenderer {
+
+    int initGLFW();
+    int initGlad();
 };
+
 
 
 #endif //SAUSAGEENGINE_V0_0_2_INTERNALRENDERER_H

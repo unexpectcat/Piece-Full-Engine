@@ -1,55 +1,73 @@
 [
           {
-            "directory": "C:/Users/User/Desktop/SausageEngine-v0.0.2",
-            "file": "C:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/backends/imgui_impl_glfw.cpp",
-            "command": "cc -MD -MP -DWINDOWS -D_CRT_SECURE_NO_WARNINGS -DDEBUG -IC:/Users/User/Desktop/SausageEngine-v0.0.2/src -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/imgui_impl_glfw.o -MF C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/imgui_impl_glfw.d -c C:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/backends/imgui_impl_glfw.cpp"
+            "directory": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2",
+            "file": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/backends/imgui_impl_glfw.cpp",
+            "command": "cc -MD -MP -DLINUX -DDEBUG -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/imgui_impl_glfw.o -MF /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/imgui_impl_glfw.d -c /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/backends/imgui_impl_glfw.cpp"
           }
 ,
           {
-            "directory": "C:/Users/User/Desktop/SausageEngine-v0.0.2",
-            "file": "C:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/backends/imgui_impl_opengl3.cpp",
-            "command": "cc -MD -MP -DWINDOWS -D_CRT_SECURE_NO_WARNINGS -DDEBUG -IC:/Users/User/Desktop/SausageEngine-v0.0.2/src -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/imgui_impl_opengl3.o -MF C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/imgui_impl_opengl3.d -c C:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/backends/imgui_impl_opengl3.cpp"
+            "directory": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2",
+            "file": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/backends/imgui_impl_opengl3.cpp",
+            "command": "cc -MD -MP -DLINUX -DDEBUG -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/imgui_impl_opengl3.o -MF /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/imgui_impl_opengl3.d -c /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/backends/imgui_impl_opengl3.cpp"
           }
 ,
           {
-            "directory": "C:/Users/User/Desktop/SausageEngine-v0.0.2",
-            "file": "C:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/imgui.cpp",
-            "command": "cc -MD -MP -DWINDOWS -D_CRT_SECURE_NO_WARNINGS -DDEBUG -IC:/Users/User/Desktop/SausageEngine-v0.0.2/src -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/imgui.o -MF C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/imgui.d -c C:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/imgui.cpp"
+            "directory": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2",
+            "file": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/imgui.cpp",
+            "command": "cc -MD -MP -DLINUX -DDEBUG -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/imgui.o -MF /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/imgui.d -c /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/imgui.cpp"
           }
 ,
           {
-            "directory": "C:/Users/User/Desktop/SausageEngine-v0.0.2",
-            "file": "C:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/imgui_demo.cpp",
-            "command": "cc -MD -MP -DWINDOWS -D_CRT_SECURE_NO_WARNINGS -DDEBUG -IC:/Users/User/Desktop/SausageEngine-v0.0.2/src -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/imgui_demo.o -MF C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/imgui_demo.d -c C:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/imgui_demo.cpp"
+            "directory": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2",
+            "file": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/imgui_demo.cpp",
+            "command": "cc -MD -MP -DLINUX -DDEBUG -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/imgui_demo.o -MF /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/imgui_demo.d -c /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/imgui_demo.cpp"
           }
 ,
           {
-            "directory": "C:/Users/User/Desktop/SausageEngine-v0.0.2",
-            "file": "C:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/imgui_draw.cpp",
-            "command": "cc -MD -MP -DWINDOWS -D_CRT_SECURE_NO_WARNINGS -DDEBUG -IC:/Users/User/Desktop/SausageEngine-v0.0.2/src -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/imgui_draw.o -MF C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/imgui_draw.d -c C:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/imgui_draw.cpp"
+            "directory": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2",
+            "file": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/imgui_draw.cpp",
+            "command": "cc -MD -MP -DLINUX -DDEBUG -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/imgui_draw.o -MF /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/imgui_draw.d -c /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/imgui_draw.cpp"
           }
 ,
           {
-            "directory": "C:/Users/User/Desktop/SausageEngine-v0.0.2",
-            "file": "C:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/imgui_tables.cpp",
-            "command": "cc -MD -MP -DWINDOWS -D_CRT_SECURE_NO_WARNINGS -DDEBUG -IC:/Users/User/Desktop/SausageEngine-v0.0.2/src -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/imgui_tables.o -MF C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/imgui_tables.d -c C:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/imgui_tables.cpp"
+            "directory": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2",
+            "file": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/imgui_tables.cpp",
+            "command": "cc -MD -MP -DLINUX -DDEBUG -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/imgui_tables.o -MF /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/imgui_tables.d -c /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/imgui_tables.cpp"
           }
 ,
           {
-            "directory": "C:/Users/User/Desktop/SausageEngine-v0.0.2",
-            "file": "C:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/imgui_widgets.cpp",
-            "command": "cc -MD -MP -DWINDOWS -D_CRT_SECURE_NO_WARNINGS -DDEBUG -IC:/Users/User/Desktop/SausageEngine-v0.0.2/src -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/imgui_widgets.o -MF C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/imgui_widgets.d -c C:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/imgui_widgets.cpp"
+            "directory": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2",
+            "file": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/imgui_widgets.cpp",
+            "command": "cc -MD -MP -DLINUX -DDEBUG -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/imgui_widgets.o -MF /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/imgui_widgets.d -c /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/imgui_widgets.cpp"
           }
 ,
           {
-            "directory": "C:/Users/User/Desktop/SausageEngine-v0.0.2",
-            "file": "C:/Users/User/Desktop/SausageEngine-v0.0.2/src/glad.c",
-            "command": "cc -MD -MP -DWINDOWS -D_CRT_SECURE_NO_WARNINGS -DDEBUG -IC:/Users/User/Desktop/SausageEngine-v0.0.2/src -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/glad.o -MF C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/glad.d -c C:/Users/User/Desktop/SausageEngine-v0.0.2/src/glad.c"
+            "directory": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2",
+            "file": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src/engine/core/core.cpp",
+            "command": "cc -MD -MP -DLINUX -DDEBUG -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/core.o -MF /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/core.d -c /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src/engine/core/core.cpp"
           }
 ,
           {
-            "directory": "C:/Users/User/Desktop/SausageEngine-v0.0.2",
-            "file": "C:/Users/User/Desktop/SausageEngine-v0.0.2/src/main.c",
-            "command": "cc -MD -MP -DWINDOWS -D_CRT_SECURE_NO_WARNINGS -DDEBUG -IC:/Users/User/Desktop/SausageEngine-v0.0.2/src -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui -IC:/Users/User/Desktop/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/main.o -MF C:/Users/User/Desktop/SausageEngine-v0.0.2/obj/windows-x86_64/Debug/SausageEngine/main.d -c C:/Users/User/Desktop/SausageEngine-v0.0.2/src/main.c"
+            "directory": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2",
+            "file": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src/engine/objects/window.cpp",
+            "command": "cc -MD -MP -DLINUX -DDEBUG -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/window.o -MF /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/window.d -c /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src/engine/objects/window.cpp"
+          }
+,
+          {
+            "directory": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2",
+            "file": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src/engine/renderer/internalRenderer.cpp",
+            "command": "cc -MD -MP -DLINUX -DDEBUG -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/internalRenderer.o -MF /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/internalRenderer.d -c /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src/engine/renderer/internalRenderer.cpp"
+          }
+,
+          {
+            "directory": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2",
+            "file": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src/glad.c",
+            "command": "cc -MD -MP -DLINUX -DDEBUG -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/glad.o -MF /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/glad.d -c /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src/glad.c"
+          }
+,
+          {
+            "directory": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2",
+            "file": "/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src/main.c",
+            "command": "cc -MD -MP -DLINUX -DDEBUG -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui -I/home/ahd/Documents/Repositories/SausageEngine-v0.0.2/include/imgui/backends -m64 -g -o /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/main.o -MF /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/obj/linux-x86_64/Debug/SausageEngine/main.d -c /home/ahd/Documents/Repositories/SausageEngine-v0.0.2/src/main.c"
           }
 ]

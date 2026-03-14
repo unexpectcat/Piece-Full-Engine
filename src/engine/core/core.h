@@ -6,8 +6,17 @@
 #define SAUSAGEENGINE_V0_0_2_CORE_H
 
 
-class core {
-};
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+    void initSausageEngine();
+
+#ifdef __cplusplus
+}
+#endif
+
 
 
 #endif //SAUSAGEENGINE_V0_0_2_CORE_H
