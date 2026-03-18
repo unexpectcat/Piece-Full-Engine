@@ -28,7 +28,6 @@ int Window::createWindow() {
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_ANY_PROFILE);
-        window = glfwCreateWindow(800, 600, "Sausage Engine (Fallback)", NULL, NULL);
     }
 
     if (!window) {
