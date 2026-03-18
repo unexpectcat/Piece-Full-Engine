@@ -7,15 +7,7 @@
 
 
 
-#ifdef __cplusplus
-extern "C" {
-#endif
 
-    void initSausageEngine();
-
-#ifdef __cplusplus
-}
-#endif
 
 
 

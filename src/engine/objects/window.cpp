@@ -20,7 +20,7 @@ struct Window::Impl {
 GLFWwindow* Window::Impl::window = nullptr;
 
 int Window::createWindow() {
-    GLFWwindow* window = glfwCreateWindow(800, 600, "Sausage Engine", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(Window::resolution[0], Window::resolution[1], "Sausage Engine", NULL, NULL);
 
     if (!window) {
         printf("3.3 Core failed. Attempting fallback to 2.1...\n");
