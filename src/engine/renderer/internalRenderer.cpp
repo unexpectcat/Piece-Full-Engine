@@ -3,7 +3,8 @@
 //
 
 #include "internalRenderer.h"
-#include <glad/glad.h>
+#define GLAD_GL_IMPLEMENTATION
+#include <glad/gl.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 
@@ -27,7 +28,7 @@ int internalRenderer::initGLFW() {
 
 // Load GLAD (Must happen after making context current)
 int internalRenderer::initGlad() {
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+    if (!gladLoadGL((GLADloadfunc)glfwGetProcAddress)) {
         fprintf(stderr, "Failed to initialize GLAD\n");
         return -1;
     }

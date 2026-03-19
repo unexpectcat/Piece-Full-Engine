@@ -29,7 +29,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     cp vendor/imgui/backends/imgui_impl_opengl3_loader.h include/imgui/backends/
 
     mkdir -p include/glad2/
-    cp vendor/glfw/deps/glad/gl.h include/glad2/gl.h
+    cp vendor/glfw/deps/glad/gl.h include/glad/gl.h
 fi
 
 make config=debug -j$(nproc)

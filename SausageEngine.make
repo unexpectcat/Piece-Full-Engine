@@ -84,7 +84,6 @@ OBJECTS :=
 GENERATED += $(OBJDIR)/EngineWindow.o
 GENERATED += $(OBJDIR)/SausageEngine.o
 GENERATED += $(OBJDIR)/core.o
-GENERATED += $(OBJDIR)/glad.o
 GENERATED += $(OBJDIR)/imgui.o
 GENERATED += $(OBJDIR)/imgui_demo.o
 GENERATED += $(OBJDIR)/imgui_draw.o
@@ -98,7 +97,6 @@ GENERATED += $(OBJDIR)/window.o
 OBJECTS += $(OBJDIR)/EngineWindow.o
 OBJECTS += $(OBJDIR)/SausageEngine.o
 OBJECTS += $(OBJDIR)/core.o
-OBJECTS += $(OBJDIR)/glad.o
 OBJECTS += $(OBJDIR)/imgui.o
 OBJECTS += $(OBJDIR)/imgui_demo.o
 OBJECTS += $(OBJDIR)/imgui_draw.o
@@ -208,9 +206,6 @@ $(OBJDIR)/window.o: src/engine/objects/window.cpp
 $(OBJDIR)/internalRenderer.o: src/engine/renderer/internalRenderer.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
-$(OBJDIR)/glad.o: src/glad.c
-	@echo "$(notdir $<)"
-	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/main.o: src/main.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
