@@ -32,5 +32,24 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
     cp vendor/glfw/deps/glad/gl.h include/glad/gl.h
 fi
 
+read -p "Build Windows libraries? y/N: " win_answer
+if [[ "$win_answer" =~ ^[Yy]$ ]]; then
+    mkdir -p lib/windows/
+    # Assimp
+    cd vendor/assimp
+    cmake -B build -DASSIMP_BUILD_TESTS=OFF -DASSIMP_BUILD_ASSIMP_TOOLS=OFF
+    cmake --build build --config Release
+    cp build/bin/Release/*.dll ../../lib/windows/
+    cp build/lib/Release/*.lib ../../lib/windows/
+    cd ../..
+
+    # GLFW
+    cd vendor/glfw
+    cmake -B build
+    cmake --build build --config Release
+    cp build/src/Release/glfw3.lib ../../lib/windows/
+    cd ../..
+fi
+
 make config=debug -j$(nproc)
 
