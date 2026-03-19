@@ -426,3 +426,5 @@ compile_commands.json
 # --- Compilation Database (if generated in a specific folder) ---
 compile_commands/
 vendor/
+
+compile_commands.json
