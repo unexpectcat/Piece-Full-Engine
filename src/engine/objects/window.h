@@ -20,7 +20,7 @@ public:
 
     int createWindow();
     void setCurrentContextNull();
-
+    void bindImguiContext();
     bool isOpen();
     void BeginDrawFrame();
     void EndDrawFrame();
