@@ -14,21 +14,14 @@ public:
 
 
     int resolution[2];
+    bool isOpen = true;
+
     Window(int w, int h) : resolution{w, h} {}
 
     ~Window() = default;
 
-    int createWindow();
-    void setCurrentContextNull();
-    void bindImguiContext();
-    bool isOpen();
-    void BeginDrawFrame();
-    void EndDrawFrame();
-    void Shutdown();
 
-private:
-    struct Impl;
-    Impl* impl;
+
 };
 
 
