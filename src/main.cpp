@@ -1,8 +1,13 @@
 ﻿#include "engine/SausageEngine.h"
 
-int main(void) {
+int main(int argc, char** argv)
+{
+    auto engine = std::make_unique<SausageEngine>();
 
-    SE::initSausageEngine();
+    if (!engine->Startup()) {
+        return -1;
+    }
 
+    engine->Run();
     return 0;
 }

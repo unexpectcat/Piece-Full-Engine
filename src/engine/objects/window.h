@@ -12,9 +12,9 @@ class Window {
 
 public:
 
-
+    int index;
     int resolution[2];
-    bool isOpen = true;
+    bool closed = false;
 
     Window(int w, int h) : resolution{w, h} {}
 

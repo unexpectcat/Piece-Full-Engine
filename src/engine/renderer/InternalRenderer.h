@@ -1,12 +1,12 @@
 //
-// Created by ahd on 3/12/26.
+// Created by unexpectcat on 3/12/26.
 //
 
 #ifndef SAUSAGEENGINE_V0_0_2_INTERNALRENDERER_H
 #define SAUSAGEENGINE_V0_0_2_INTERNALRENDERER_H
 
-#include "../objects/window.h"
-
+#include <memory>
+class Window;
 class InternalRenderer {
 
 
@@ -18,9 +18,9 @@ public:
     static int initGlad();
     static int initImGui();
     static void destroyGLFW();
-    static int initEngineWindow(const Window *window);
-    static bool isEngineWindowOpen();
-    static void destroyWindow(Window *window);
+    static int initEngineWindow(Window* window);
+    static bool isEngineWindowShouldClose(int index);
+    static void destroyWindow(int index);
     static void BeginDrawFrame();
     static void EndDrawFrame();
 

@@ -3,33 +3,32 @@
 //
 
 #include "SausageEngine.h"
-#include "renderer/internalRenderer.h"
-#include "objects/EngineWindow.h"
+#include "objects/window.h"
+#include <memory>
 
-
-
-void SE::initSausageEngine() {
-    internalRenderer::initGLFW();
-
-    EngineWindow *engine_main_window = new EngineWindow(720, 480);
-    int create_window_error = engine_main_window->createWindow();
-
-    if (create_window_error == -1) {
-        return;
-    }
-    internalRenderer::initGlad();
-
-    while (engine_main_window->isOpen()) {
-        engine_main_window->BeginDrawFrame();
-
-
-        engine_main_window->EndDrawFrame();
-    }
-
-    engine_main_window->Shutdown();
-    delete engine_main_window;
+SausageEngine::SausageEngine()
+    : m_isRunning(false),
+      m_renderer(std::make_unique<Renderer>()),  // ALLOCATE HERE
+      m_window(std::make_unique<Window>(720, 480)) // ALLOCATE HERE
+{
+    // Constructor body can stay empty now
 }
 
-void SE::shutdownSausageEngine() {
+SausageEngine::~SausageEngine() = default;
 
+bool SausageEngine::Startup() {
+    m_renderer->init(m_window.get());
+    m_isRunning = true;
+    return true;
+}
+
+void SausageEngine::Run() {
+    while (m_isRunning) {
+        m_renderer->renderFrame();
+
+        if (m_window->closed) {
+            m_isRunning = false;
+            m_renderer->destroyWindow(0);
+        }
+    }
 }

@@ -1,3 +1,7 @@
+//
+// Created by unexpectcat on 3/12/26.
+//
+
 #include "InternalRenderer.h"
 #define GLAD_GL_IMPLEMENTATION
 #include "glad/gl.h"
@@ -12,16 +16,15 @@
 
 #include <iostream>
 #include <cmath>
+#include "../objects/window.h"
 
 struct InternalRenderer::Impl {
     virtual ~Impl() = default;
-    static GLFWwindow* windows[4];
+    static GLFWwindow* windows[1];
 };
 
-// Initialize static member
-GLFWwindow* InternalRenderer::Impl::windows[4] = { nullptr, nullptr, nullptr, nullptr };
+GLFWwindow* InternalRenderer::Impl::windows[1] = { nullptr };
 
-// FIX: Initialize 'impl' and define Destructor
 InternalRenderer::InternalRenderer() : impl(new Impl()) {}
 InternalRenderer::~InternalRenderer() { delete impl; }
 
@@ -73,11 +76,10 @@ void InternalRenderer::destroyGLFW() {
     glfwTerminate();
 }
 
-int InternalRenderer::initEngineWindow(const Window *window) {
+int InternalRenderer::initEngineWindow(Window *window) {
     if (!window) return -1;
 
-    // FIX: Use nullptr instead of NULL
-    InternalRenderer::Impl::windows[0] = glfwCreateWindow(
+        InternalRenderer::Impl::windows[0] = glfwCreateWindow(
         window->resolution[0],
         window->resolution[1],
         "Sausage Engine",
@@ -106,20 +108,31 @@ int InternalRenderer::initEngineWindow(const Window *window) {
         return -1;
     }
 
+    glfwSetWindowUserPointer(InternalRenderer::Impl::windows[0], window);
+
+    glfwSetWindowCloseCallback(InternalRenderer::Impl::windows[0], [](GLFWwindow* w) {
+        auto* myWindow = static_cast<Window*>(glfwGetWindowUserPointer(w));
+        if (myWindow) {
+            myWindow->closed = true;
+        }
+    });
+
     glfwMakeContextCurrent(InternalRenderer::Impl::windows[0]);
     return 0;
 }
 
-bool InternalRenderer::isEngineWindowOpen() {
-    return !glfwWindowShouldClose(InternalRenderer::Impl::windows[0]);
+bool InternalRenderer::isEngineWindowShouldClose(int index) {
+    return glfwWindowShouldClose(InternalRenderer::Impl::windows[index]);
 }
 
-void InternalRenderer::destroyWindow(Window *window) {
-    if (InternalRenderer::Impl::windows[0]) {
-        glfwDestroyWindow(InternalRenderer::Impl::windows[0]);
-        InternalRenderer::Impl::windows[0] = nullptr;
+void InternalRenderer::destroyWindow(int index) {
+
+    if (index < 0 || index >= 1) return;
+
+    if (InternalRenderer::Impl::windows[index]) {
+        glfwDestroyWindow(InternalRenderer::Impl::windows[index]);
+        InternalRenderer::Impl::windows[index] = nullptr;
     }
-    if (window) window->isOpen = false;
 }
 
 void InternalRenderer::BeginDrawFrame() {

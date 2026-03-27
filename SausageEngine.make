@@ -81,7 +81,8 @@ endif
 GENERATED :=
 OBJECTS :=
 
-GENERATED += $(OBJDIR)/EngineWindow.o
+GENERATED += $(OBJDIR)/ExternalRenderer.o
+GENERATED += $(OBJDIR)/InternalRenderer.o
 GENERATED += $(OBJDIR)/SausageEngine.o
 GENERATED += $(OBJDIR)/core.o
 GENERATED += $(OBJDIR)/imgui.o
@@ -91,10 +92,10 @@ GENERATED += $(OBJDIR)/imgui_impl_glfw.o
 GENERATED += $(OBJDIR)/imgui_impl_opengl3.o
 GENERATED += $(OBJDIR)/imgui_tables.o
 GENERATED += $(OBJDIR)/imgui_widgets.o
-GENERATED += $(OBJDIR)/internalRenderer.o
 GENERATED += $(OBJDIR)/main.o
 GENERATED += $(OBJDIR)/window.o
-OBJECTS += $(OBJDIR)/EngineWindow.o
+OBJECTS += $(OBJDIR)/ExternalRenderer.o
+OBJECTS += $(OBJDIR)/InternalRenderer.o
 OBJECTS += $(OBJDIR)/SausageEngine.o
 OBJECTS += $(OBJDIR)/core.o
 OBJECTS += $(OBJDIR)/imgui.o
@@ -104,7 +105,6 @@ OBJECTS += $(OBJDIR)/imgui_impl_glfw.o
 OBJECTS += $(OBJDIR)/imgui_impl_opengl3.o
 OBJECTS += $(OBJDIR)/imgui_tables.o
 OBJECTS += $(OBJDIR)/imgui_widgets.o
-OBJECTS += $(OBJDIR)/internalRenderer.o
 OBJECTS += $(OBJDIR)/main.o
 OBJECTS += $(OBJDIR)/window.o
 
@@ -197,13 +197,13 @@ $(OBJDIR)/SausageEngine.o: src/engine/SausageEngine.cpp
 $(OBJDIR)/core.o: src/engine/core/core.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
-$(OBJDIR)/EngineWindow.o: src/engine/objects/EngineWindow.cpp
-	@echo "$(notdir $<)"
-	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/window.o: src/engine/objects/window.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
-$(OBJDIR)/internalRenderer.o: src/engine/renderer/internalRenderer.cpp
+$(OBJDIR)/ExternalRenderer.o: src/engine/renderer/ExternalRenderer.cpp
+	@echo "$(notdir $<)"
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/InternalRenderer.o: src/engine/renderer/InternalRenderer.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/main.o: src/main.cpp
