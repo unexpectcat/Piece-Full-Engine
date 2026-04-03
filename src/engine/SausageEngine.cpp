@@ -3,13 +3,15 @@
 //
 
 #include "SausageEngine.h"
-#include "objects/window.h"
+#include "objects/EngineWindow.h"
 #include <memory>
+
+#include "objects/Inspector.h"
 
 SausageEngine::SausageEngine()
     : m_isRunning(false),
-      m_renderer(std::make_unique<Renderer>()),  // ALLOCATE HERE
-      m_window(std::make_unique<Window>(720, 480)) // ALLOCATE HERE
+      m_renderer(std::make_unique<Renderer>()),
+      m_window(std::make_unique<Window>(720, 480))
 {
     // Constructor body can stay empty now
 }

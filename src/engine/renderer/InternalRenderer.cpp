@@ -16,7 +16,13 @@
 
 #include <iostream>
 #include <cmath>
-#include "../objects/window.h"
+
+#include "../../../include/imgui/imgui.h"
+#include "../objects/EngineWindow.h"
+#include "../objects/Inspector.h"
+#include "../objects/AssetManager.h"
+#include "../objects/ToolBar.h"
+#include "../objects/ViewPort.h"
 
 struct InternalRenderer::Impl {
     virtual ~Impl() = default;
@@ -24,6 +30,7 @@ struct InternalRenderer::Impl {
 };
 
 GLFWwindow* InternalRenderer::Impl::windows[1] = { nullptr };
+
 
 InternalRenderer::InternalRenderer() : impl(new Impl()) {}
 InternalRenderer::~InternalRenderer() { delete impl; }
@@ -119,6 +126,74 @@ int InternalRenderer::initEngineWindow(Window *window) {
 
     glfwMakeContextCurrent(InternalRenderer::Impl::windows[0]);
     return 0;
+}
+
+
+void InternalRenderer::showInspector(Inspector *inspector) {
+    if (!inspector) return;
+    if (!inspector->visible) return;
+    ImGui::ShowDemoWindow(&inspector->visible);
+    ImGui::Begin("inspector");
+    ImGui::End();
+}
+
+void InternalRenderer::showToolBar(ToolBar* toolbar) {
+    if (!toolbar) return;
+    if (!toolbar->visible) return;
+
+    // A simple top-aligned bar
+
+    if (ImGui::BeginMainMenuBar()) {
+        if (ImGui::BeginMenu("File")) {
+            if (ImGui::MenuItem("New Scene")) {}
+            if (ImGui::MenuItem("Save", "Ctrl+S")) {}
+            ImGui::Separator();
+            if (ImGui::MenuItem("Exit")) { /* Handle exit */ }
+            ImGui::EndMenu();
+        }
+        if (ImGui::BeginMenu("Edit")) {
+            if (ImGui::MenuItem("Undo", "Ctrl+Z")) {}
+            ImGui::EndMenu();
+        }
+        ImGui::EndMainMenuBar();
+    }
+}
+
+void InternalRenderer::showViewPort(ViewPort* viewport, uint32_t sceneTexture) {
+    if (!viewport || !viewport->visible) return;
+
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
+    ImGui::Begin("Viewport", &viewport->visible);
+
+    // Fill the window with the texture from your Framebuffer
+    ImVec2 viewportSize = ImGui::GetContentRegionAvail();
+
+    // Cast the texture ID to ImTextureID for ImGui
+    // Note: If sceneTexture is 0, this will just show a black square
+    ImGui::Image((ImTextureID)(uintptr_t)sceneTexture, viewportSize, ImVec2(0, 1), ImVec2(1, 0));
+
+    ImGui::End();
+    ImGui::PopStyleVar();
+}
+
+void InternalRenderer::showAssetManager(AssetManager* assetManager) {
+    if (!assetManager || !assetManager->visible) return;
+
+    ImGui::Begin("Asset Manager", &assetManager->visible);
+
+    if (ImGui::TreeNode("Scripts")) {
+        ImGui::BulletText("PlayerController.cpp");
+        ImGui::BulletText("EnemyAI.cpp");
+        ImGui::TreePop();
+    }
+
+    if (ImGui::TreeNode("Textures")) {
+        ImGui::BulletText("Sausage_Albedo.png");
+        ImGui::BulletText("Ground_Normal.tga");
+        ImGui::TreePop();
+    }
+
+    ImGui::End();
 }
 
 bool InternalRenderer::isEngineWindowShouldClose(int index) {
