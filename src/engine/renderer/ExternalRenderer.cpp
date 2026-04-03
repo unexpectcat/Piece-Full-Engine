@@ -13,12 +13,10 @@ struct Renderer::InternalImpl {
     InternalRenderer service;
     Window *window = nullptr;
 
-    // Arrays of 4 for modular UI
     Inspector* inspector[4];
     ViewPort* viewPort[4];
     AssetManager* assetManager[4];
 
-    // Single instance for the ToolBar
     ToolBar* toolBar = nullptr;
 
     ~InternalImpl() {
@@ -36,17 +34,14 @@ Renderer::Renderer() : m_internal(new InternalImpl()) {
         inspector = new Inspector();
     }
 
-    // Initialize ViewPorts
     for (ViewPort* &view_port : m_internal->viewPort) {
         view_port = new ViewPort();
     }
 
-    // Initialize Asset Managers
     for (AssetManager* &asset_manager : m_internal->assetManager) {
         asset_manager = new AssetManager();
     }
 
-    // Initialize the single ToolBar
     m_internal->toolBar = new ToolBar();
 
 
@@ -71,14 +66,17 @@ void Renderer::init(Window *window) {
 
 void Renderer::renderFrame() {
 
-    m_internal->service.BeginDrawFrame();
+    m_internal->service.CreateViewPortFrameBuffer(200, 200);
+    m_internal->service.BeginEngineRenderFrame();
+    m_internal->service.BeginViewPortRenderFrame();
+    m_internal->service.EndViewPortRenderFrame();
 
     for (Inspector* &inspector : m_internal->inspector) {
         InternalRenderer::showInspector(inspector);
     }
 
     for (ViewPort* &view_port : m_internal->viewPort) {
-        m_internal->service.showViewPort(view_port, 0);
+        m_internal->service.showViewPort(view_port);
     }
 
     for (AssetManager* &asset_manager : m_internal->assetManager) {
@@ -86,7 +84,10 @@ void Renderer::renderFrame() {
     }
 
     m_internal->service.showToolBar(m_internal->toolBar);
-    m_internal->service.EndDrawFrame();
+    m_internal->service.EndEngineRenderFrame();
+
+
+
 }
 
 void Renderer::destroyWindow(int index) {

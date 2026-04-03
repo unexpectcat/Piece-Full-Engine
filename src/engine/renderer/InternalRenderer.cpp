@@ -7,6 +7,8 @@
 #include "glad/gl.h"
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb/stb_image.h"
 
 #include <cstdio>
 #include <cstdlib>
@@ -27,12 +29,20 @@
 struct InternalRenderer::Impl {
     virtual ~Impl() = default;
     static GLFWwindow* windows[1];
+    struct FrameBuffer
+    {
+        virtual ~FrameBuffer() = default;
+        GLuint fbo = 0;
+        GLuint color = 0;
+        GLuint depth = 0;
+        int width = 0;
+        int height = 0;
+    };
+    FrameBuffer viewportFB;
 };
 
 GLFWwindow* InternalRenderer::Impl::windows[1] = { nullptr };
-
-
-InternalRenderer::InternalRenderer() : impl(new Impl()) {}
+InternalRenderer::InternalRenderer() : impl(new Impl())  {}
 InternalRenderer::~InternalRenderer() { delete impl; }
 
 int InternalRenderer::initGLFW() {
@@ -128,7 +138,6 @@ int InternalRenderer::initEngineWindow(Window *window) {
     return 0;
 }
 
-
 void InternalRenderer::showInspector(Inspector *inspector) {
     if (!inspector) return;
     if (!inspector->visible) return;
@@ -140,8 +149,6 @@ void InternalRenderer::showInspector(Inspector *inspector) {
 void InternalRenderer::showToolBar(ToolBar* toolbar) {
     if (!toolbar) return;
     if (!toolbar->visible) return;
-
-    // A simple top-aligned bar
 
     if (ImGui::BeginMainMenuBar()) {
         if (ImGui::BeginMenu("File")) {
@@ -159,7 +166,9 @@ void InternalRenderer::showToolBar(ToolBar* toolbar) {
     }
 }
 
-void InternalRenderer::showViewPort(ViewPort* viewport, uint32_t sceneTexture) {
+void InternalRenderer::showViewPort(ViewPort* viewport) {
+    GLuint textureID = impl->viewportFB.color;
+    uint32_t sceneTexture = static_cast<uint32_t>(textureID);
     if (!viewport || !viewport->visible) return;
 
     ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
@@ -210,7 +219,8 @@ void InternalRenderer::destroyWindow(int index) {
     }
 }
 
-void InternalRenderer::BeginDrawFrame() {
+void InternalRenderer::BeginEngineRenderFrame() {
+
     glfwPollEvents();
     if (glfwGetKey(InternalRenderer::Impl::windows[0], GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(InternalRenderer::Impl::windows[0], 1);
@@ -225,14 +235,114 @@ void InternalRenderer::BeginDrawFrame() {
     float blue  = (sinf(time + 4.0f) * 0.5f) + 0.5f;
 
     glClearColor(red, green, blue, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void InternalRenderer::EndDrawFrame() {
+void InternalRenderer::EndEngineRenderFrame() {
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
     if (InternalRenderer::Impl::windows[0]) {
         glfwSwapBuffers(InternalRenderer::Impl::windows[0]);
     }
+}
+
+void InternalRenderer::BeginViewPortRenderFrame() {
+
+    auto& fb = impl->viewportFB;
+
+    glBindFramebuffer(GL_FRAMEBUFFER, fb.fbo);
+    glViewport(0, 0, fb.width, fb.height);
+
+    auto time = static_cast<float>(glfwGetTime());
+    float red   = (sinf(time) * 0.5f) + 0.5f;
+    float green = (sinf(time + 2.0f) * 0.5f) + 0.5f;
+    float blue  = (sinf(time + 4.0f) * 0.5f) + 0.5f;
+
+    glClearColor(red, green, blue, 1.0f);
+
+}
+
+void InternalRenderer::EndViewPortRenderFrame() {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+}
+
+
+
+bool LoadTextureFromMemory(const void* data, size_t data_size, GLuint* out_texture, int* out_width, int* out_height)
+{
+    // Load from file
+    int image_width = 0;
+    int image_height = 0;
+    unsigned char* image_data = stbi_load_from_memory((const unsigned char*)data, (int)data_size, &image_width, &image_height, NULL, 4);
+    if (image_data == NULL)
+        return false;
+
+    // Create a OpenGL texture identifier
+    GLuint image_texture;
+    glGenTextures(1, &image_texture);
+    glBindTexture(GL_TEXTURE_2D, image_texture);
+
+    // Setup filtering parameters for display
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    // Upload pixels into texture
+    glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image_width, image_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image_data);
+    stbi_image_free(image_data);
+
+    *out_texture = image_texture;
+    *out_width = image_width;
+    *out_height = image_height;
+
+    return true;
+}
+
+bool InternalRenderer::CreateViewPortFrameBuffer(int width, int height) {
+    auto& fb = impl->viewportFB;
+    if (fb.fbo)
+    {
+        glDeleteFramebuffers(1, &fb.fbo);
+        glDeleteTextures(1, &fb.color);
+        glDeleteRenderbuffers(1, &fb.depth);
+    }
+
+    fb.width = width;
+    fb.height = height;
+
+    glGenFramebuffers(1, &fb.fbo);
+    glBindFramebuffer(GL_FRAMEBUFFER, fb.fbo);
+
+    // color texture
+    glGenTextures(1, &fb.color);
+    glBindTexture(GL_TEXTURE_2D, fb.color);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+    glFramebufferTexture2D(GL_FRAMEBUFFER,
+        GL_COLOR_ATTACHMENT0,
+        GL_TEXTURE_2D,
+        fb.color,
+        0);
+
+    // depth
+    glGenRenderbuffers(1, &fb.depth);
+    glBindRenderbuffer(GL_RENDERBUFFER, fb.depth);
+    glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, width, height);
+
+    glFramebufferRenderbuffer(GL_FRAMEBUFFER,
+        GL_DEPTH_STENCIL_ATTACHMENT,
+        GL_RENDERBUFFER,
+        fb.depth);
+
+    bool ok = glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE;
+
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    return ok;
 }

@@ -17,7 +17,6 @@ class InternalRenderer {
 public:
     InternalRenderer();
     ~InternalRenderer();
-
     static int initGLFW();
     static int initGlad();
     static int initImGui();
@@ -25,15 +24,17 @@ public:
     static int initEngineWindow(Window* window);
     static void showInspector(Inspector* inspector);
     static void showToolBar(ToolBar* toolbar);
-    static void showViewPort(ViewPort* viewport, unsigned int textureID);
+    void showViewPort(ViewPort* viewport);
     static void showAssetManager(AssetManager* assetManager);
     static bool isEngineWindowShouldClose(int index);
 
 public:
     static void destroyWindow(int index);
-    static void BeginDrawFrame();
-    static void EndDrawFrame();
-
+    static void BeginEngineRenderFrame();
+    static void EndEngineRenderFrame();
+    void BeginViewPortRenderFrame();
+    void EndViewPortRenderFrame();
+    bool CreateViewPortFrameBuffer(int width, int height);
 
 private:
     struct Impl;

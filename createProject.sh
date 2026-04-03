@@ -30,6 +30,9 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
 
     mkdir -p include/glad2/
     cp vendor/glfw/deps/glad/gl.h include/glad/gl.h
+
+    mkdir -p include/stb/
+    cp vendor/stb/stb_image.h include/stb/stb_image.h
 fi
 
 read -p "Build Windows libraries? y/N: " win_answer
