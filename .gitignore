@@ -1,0 +1,8 @@
+cmake-build/
+cmake-build-*/
+.idea/
+bin/
+vcpkg_installed/
+vendor/vcpkg/buildtrees/
+vendor/vcpkg/downloads/
+vendor/vcpkg/packages/
